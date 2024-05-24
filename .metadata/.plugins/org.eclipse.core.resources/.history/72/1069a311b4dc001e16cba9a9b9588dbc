@@ -1,0 +1,85 @@
+package basic;
+
+public class Queue {
+	private int[] queue;
+	private int size;
+	private int top;
+	private int bottom;
+	private int counter;
+
+	/** Initializes the queue instance */
+	public void initQueue(int size) {
+		this.size = size;
+		this.queue = new int[size];
+		this.top = 0;
+		this.bottom = 0;
+		this.counter = 0;
+	}
+
+	/** Clears all elements from the queue */
+	public void clear() {
+
+	}
+
+	/** Enqueues an element at the back of the queue */
+	public void enqueue(int val) {
+		if (counter != size) {
+			if (bottom > (queue.length - 1)) {
+				bottom = 0;
+			}
+			bottom = val;
+			counter++;
+			bottom++;
+		}
+	}
+
+	/** Dequeues the element at the front of the queue */
+	public int dequeue() {
+		if (top < (queue.length - 1)) {
+			top = top + 1;
+			return queue[top - 1];
+		} else {
+			top = 0;
+			return queue[queue.length - 1];
+		}
+	}
+
+	/** Returns the front element of the queue without removing it */
+	public int peek() {
+
+	}
+
+	/** Returns the number of elements in the queue */
+	public int elements() {
+
+	}
+
+	/** Returns the maximum size of the queue */
+	public int size() {
+
+	}
+
+	/** Prints all elements in the queue */
+	public void print() {
+		int[] pq = new int[counter];
+		int x = 0;
+		for(int i = top; i < (queue.length - 1); i++) {
+			pq
+		}
+	}
+
+	public static void main(String[] args) {
+		Queue q = new Queue();
+		q.initQueue(4);
+		q.enqueue(1);
+		q.enqueue(2);
+		q.enqueue(3);
+		q.enqueue(4);
+	}
+	
+}
+
+
+
+
+

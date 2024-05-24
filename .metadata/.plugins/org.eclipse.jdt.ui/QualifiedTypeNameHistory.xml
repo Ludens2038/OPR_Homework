@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="In"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Disabled"/>
+    <fullyQualifiedTypeName name="basic.Stack"/>
+    <fullyQualifiedTypeName name="basic.Queue"/>
+    <fullyQualifiedTypeName name="extended.Stack"/>
+    <fullyQualifiedTypeName name="extendedStack"/>
+    <fullyQualifiedTypeName name="extended.Queue"/>
+    <fullyQualifiedTypeName name="at.fhhgb.mc.Aufgabe01.DoubleLinkedList"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="at.fhhgb.mc.Aufgabe01.BinarySearchTree"/>
+    <fullyQualifiedTypeName name="mc.opr.dll.MyDoubleLinkedList"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe02.RandomAccessDoubleLinkedList"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe02.ChainingHashSet"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe01.BinarySearchTree"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.AbstractMember"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.Section"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.AmateurAthlete"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.ChairMember"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.HonoraryMember"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.TopAthlete"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.Trainer"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Uebung05.Aufgabe02.SupportingMember"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe01.ChainingHashSet"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe01.ListQueue"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe01.RandomAccessDoubleLinkedList"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe01.ListStack"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Exeptions.ValueException"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Exeptions.InvalidAccessException"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe01Exceptions.InvalidAccessException"/>
+    <fullyQualifiedTypeName name="at.fhooe.sail.mc.Aufgabe01Exceptions.ValueException"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+</qualifiedTypeNameHistroy>

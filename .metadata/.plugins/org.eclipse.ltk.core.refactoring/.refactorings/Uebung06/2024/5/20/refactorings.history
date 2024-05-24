@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;InvalidAccessException.java&apos; to &apos;Uebung07/src/at.fhooe.sail.mc.Exceptions&apos;&#x0D;&#x0A;- Original project: &apos;Uebung06&apos;&#x0D;&#x0A;- Destination element: &apos;Uebung07/src/at.fhooe.sail.mc.Exceptions&apos;&#x0D;&#x0A;- Original element: &apos;at.fhooe.sail.mc.Aufgabe01Exceptions.InvalidAccessException.java&apos;" description="Copy compilation unit" destination="=Uebung07/src&lt;at.fhooe.sail.mc.Exceptions" element1="/src&lt;at.fhooe.sail.mc.Aufgabe01Exceptions{InvalidAccessException.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1715682499256" units="1" version="1.0"/>
+</session>

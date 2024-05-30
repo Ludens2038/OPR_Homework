@@ -1,0 +1,60 @@
+package at.fhooe.sail.Lambdas;
+
+import at.fhhgb.mc.opr.backblazedata.model.HardDisk;
+
+import java.util.Vector;
+
+import at.fhhgb.mc.opr.backblazedata.loaders.HardDiskDataSource;
+import at.fhhgb.mc.opr.backblazedata.loaders.LiveHardDiskDataSource;
+
+public class MainClass {
+	public static void main(String[] args) {
+		HardDiskDataSource source = new LiveHardDiskDataSource();
+		HardDisk disk;
+		Vector<HardDisk> hardDisks = new Vector<>();
+
+		while ((disk = source.next()) != null) {
+			hardDisks.add(disk);
+		}
+
+		DataProcessorManual processor = new DataProcessorManual(hardDisks);
+
+		// Count of drives in datacenter
+		long driveCount = processor.count();
+		System.out.println("Drive Count: " + driveCount);
+
+		// Count of broken drives in datacenter
+		long failedCount = processor.filter(hdd -> hdd.isFailing()).size();
+		System.out.println("Failing Drives Count: " + failedCount);
+
+		// drive with largest capacity
+		HardDisk maxBytes = processor.max(
+				(hdd1, hdd2) -> Long.compare(hdd1.getCapacityInBytes(), hdd2.getCapacityInBytes()));
+		System.out.println("Drive with largest capacity: " + maxBytes.getCapacityInBytes());
+
+		// drive with smallest capacity
+		HardDisk minBytes = processor.min(
+				(hdd1, hdd2) -> Long.compare(hdd1.getCapacityInBytes(), hdd2.getCapacityInBytes()));
+		System.out.println("Drive with smallest capacity: " + minBytes.getCapacityInBytes());
+
+		// mean drive capacity
+		double meanBytes = processor.mean(hdd -> hdd.getCapacityInBytes());
+		System.out.println("Capacity mean: " + meanBytes);
+
+		// median in drive capacity
+		long medianBytes = processor.median(
+				(hdd1, hdd2) -> Long.compare(hdd1.getCapacityInBytes(), hdd2.getCapacityInBytes()),
+				hdd -> hdd.getCapacityInBytes());
+		System.out.println("Capacity median: " + medianBytes);
+
+		// distinct values of given harddisk-to-string mapping function
+		long serialCount = processor.countDistinctStrings(hdd -> hdd.getModel());
+		System.out.println("Serial number groups: " + serialCount);
+
+		//mean smart values
+		double medianSmart = processor.median(
+				(hdd1, hdd2) -> Long.compare(hdd1.getSmartValues().size(), hdd2.getSmartValues().size()),
+				hdd -> (long) hdd.getSmartValues().size());
+		  System.out.println("Mean SMART values: " + medianSmart);
+	}
+}

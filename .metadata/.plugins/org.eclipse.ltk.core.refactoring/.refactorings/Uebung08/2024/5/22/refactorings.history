@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;dataProcessor&apos; in &apos;at.fhooe.sail.Test.JUnitTestsProcessorManual&apos; to &apos;processor&apos;&#x0D;&#x0A;- Original project: &apos;Uebung08&apos;&#x0D;&#x0A;- Original element: &apos;at.fhooe.sail.Test.JUnitTestsProcessorManual.dataProcessor&apos;&#x0D;&#x0A;- Renamed element: &apos;at.fhooe.sail.Test.JUnitTestsProcessorManual.processor&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;dataProcessor&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;at.fhooe.sail.Test{JUnitTestsProcessorManual.java[JUnitTestsProcessorManual^dataProcessor" name="processor" references="true" setter="false" stamp="1716967377789" textual="false" version="1.0"/>
+</session>

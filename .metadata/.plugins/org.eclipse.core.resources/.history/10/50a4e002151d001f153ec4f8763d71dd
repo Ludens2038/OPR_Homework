@@ -1,0 +1,112 @@
+package at.fhooe.sail.Lambdas;
+
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Vector;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+import at.fhhgb.mc.opr.backblazedata.model.HardDisk;
+
+public class DataProcessorManual {
+
+		private Vector<HardDisk> hardDisk;
+
+		public DataProcessorManual(Vector<HardDisk> hardDisks) {
+			this.hardDisk = hardDisks;
+		}
+
+		// Can use Vector.sort internally, sorts the internal Vector
+		public void sort(Comparator<HardDisk> comparator) {
+			hardDisk.sort(comparator);
+		}
+
+		// Returns size of the internal vector
+		public long count() {
+			return hardDisk.size();
+		}
+
+		// Returns a Vector of HardDisks filtered by predicate
+		public Vector<HardDisk> filter(Predicate<HardDisk> predicate) {
+			Vector<HardDisk> f = new Vector<HardDisk>(hardDisk.size());
+			int len = 0;
+			for (int i = 0; i < hardDisk.size(); i++) {
+				if(predicate.test(hardDisk.get(i))) {
+					f.add(hardDisk.get(i));
+					len++;
+				}
+			}
+			Vector<HardDisk> result = new Vector<HardDisk>(len);
+			for (int i = 0; i < len; i++) {
+				result.add(f.get(i));
+			}
+
+			return result;
+		}
+
+		// Returns the HardDisk with a specified maximum value
+		public HardDisk max(Comparator<HardDisk> comparator) {
+			HardDisk max = hardDisk.get(0);
+			for (HardDisk elem : hardDisk) {
+				if (comparator.compare(elem, max) > 0) {
+					max = elem;
+				}
+			}
+
+			return max;
+		}
+
+		// Returns the HardDisk with a specified minimum value
+		public HardDisk min(Comparator<HardDisk> comparator) {
+			HardDisk min = hardDisk.get(0);
+			for (HardDisk elem : hardDisk) {
+				if (comparator.compare(elem, min) < 0) {
+					min = elem;
+				}
+			}
+			return min;
+		}
+
+		// Returns a mean value specified by the function
+		public double mean(Function<HardDisk, Long> function) {
+			double sum = 0;
+			long size = hardDisk.size();
+			for (int i = 0; i < size; i++) {
+				sum += function.apply(hardDisk.get(i));
+			}
+			return sum / size;
+		}
+
+		// Returns a median value specified by the function
+		public long median(Comparator<HardDisk> sortingComparator, Function<HardDisk, Long> function) {
+			hardDisk.sort(sortingComparator);
+			int size = hardDisk.size();
+			if(size % 2 == 0) {
+				return (hardDisk.get(size / 2).getCapacityInBytes() + hardDisk.get(size / 2 + 1).getCapacityInBytes()) / 2;
+			} else {
+				return hardDisk.get(size / 2 + 1).getCapacityInBytes();
+			}
+		}
+
+		// Counts distinct values based on the given HardDisk-to-String mapping function
+		public long countDistinctStrings(Function<HardDisk, String> function) {
+			Set<String> set = new HashSet<>();
+			for (HardDisk elem : hardDisk) {
+				set.add(function.apply(elem));
+			}
+			return set.size();
+        }
+	}
+
+
+
+
+
+
+
+
+
+
+
+

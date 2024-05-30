@@ -1,0 +1,35 @@
+package at.fhooe.sail.Test;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.Comparator;
+import java.util.Vector;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import at.fhhgb.mc.opr.backblazedata.model.HardDisk;
+import at.fhooe.sail.Lambdas.DataProcessorManual;
+
+public class JUnitTestsProcessorManual {
+
+	private DataProcessorManual processor;
+	private DummyHardDiskDataSource dataSource;
+
+	@BeforeEach
+	public void setUp() {
+		dataSource = new DummyHardDiskDataSource();
+		Vector<HardDisk> hardDisks = new Vector<>();
+		HardDisk disk;
+		while ((disk = dataSource.next()) != null) {
+			hardDisks.add(disk);
+		}
+		processor = new DataProcessorManual(hardDisks);
+	}
+
+	@Test
+	public void testCount() {
+		assertEquals(5, processor.count());
+	}
+
+}

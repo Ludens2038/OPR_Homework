@@ -67,39 +67,39 @@ public class MainClass {
 		System.out.println("Processing with Streams API:");
 
 		// Count of drives in datacenter
-		long driveCountStream = processorStream.count();
+		long driveCountStream = processorManual.count();
 		System.out.println("Drive Count: " + driveCountStream);
 
 		// Count of broken drives in datacenter
-		long failedCountStream = processorStream.filter(hdd -> hdd.isFailing()).size();
+		long failedCountStream = processorManual.filter(hdd -> hdd.isFailing()).size();
 		System.out.println("Failing Drives Count: " + failedCountStream);
 
 		// drive with largest capacity
-		HardDisk maxBytesStream = processorStream
+		HardDisk maxBytesStream = processorManual
 				.max((hdd1, hdd2) -> Long.compare(hdd1.getCapacityInBytes(), hdd2.getCapacityInBytes()));
 		System.out.println("Drive with largest capacity: " + maxBytesStream.getCapacityInBytes());
 
 		// drive with smallest capacity
-		HardDisk minBytesStream = processorStream
+		HardDisk minBytesStream = processorManual
 				.min((hdd1, hdd2) -> Long.compare(hdd1.getCapacityInBytes(), hdd2.getCapacityInBytes()));
 		System.out.println("Drive with smallest capacity: " + minBytesStream.getCapacityInBytes());
 
 		// mean drive capacity
-		double meanBytesStream = processorStream.mean(hdd -> hdd.getCapacityInBytes());
+		double meanBytesStream = processorManual.mean(hdd -> hdd.getCapacityInBytes());
 		System.out.println("Capacity mean: " + meanBytesStream);
 
 		// median in drive capacity
-		long medianBytesStream = processorStream.median(
+		long medianBytesStream = processorManual.median(
 				(hdd1, hdd2) -> Long.compare(hdd1.getCapacityInBytes(), hdd2.getCapacityInBytes()),
 				hdd -> hdd.getCapacityInBytes());
 		System.out.println("Capacity median: " + medianBytesStream);
 
 		// distinct values of given harddisk-to-string mapping function
-		long serialCountStream = processorStream.countDistinctStrings(hdd -> hdd.getModel());
+		long serialCountStream = processorManual.countDistinctStrings(hdd -> hdd.getModel());
 		System.out.println("Serial number groups: " + serialCountStream);
 
 		// mean smart values
-		double medianSmartStream = processorStream.median(
+		double medianSmartStream = processorManual.median(
 				(hdd1, hdd2) -> Long.compare(hdd1.getSmartValues().size(), hdd2.getSmartValues().size()),
 				hdd -> (long) hdd.getSmartValues().size());
 		System.out.println("Mean SMART values: " + medianSmartStream);
